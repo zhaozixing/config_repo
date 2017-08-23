@@ -34,9 +34,10 @@ eureka:
     hostname: 127.0.0.1
     lease-expiration-duration-in-seconds: 30
     lease-renewal-interval-in-seconds: 10
-    non-secure-port: 8081
+    non-secure-port: ${server.port}
     non-secure-port-enabled: true
-    secure-port: 8081
+    secure-port: ${server.port}
+    secure-port-enabled: false
   client:
     fetch-registry: true
     register-with-eureka: true

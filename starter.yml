@@ -1,0 +1,25 @@
+server:
+  port: 8082
+spring:
+  application:
+    name: starter
+eureka:
+  instance:
+    hostname: 127.0.0.1
+    lease-expiration-duration-in-seconds: 30
+    lease-renewal-interval-in-seconds: 10
+    non-secure-port: ${server.port}
+    non-secure-port-enabled: true
+    secure-port: ${server.port}
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      default-zone: http://127.0.0.1:8761/eureka/
+endpoints:
+  shutdown:
+    enabled: true
+    sensitive: false
+  health:
+    enabled: true
+    sensitive: false
